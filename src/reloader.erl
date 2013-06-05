@@ -16,7 +16,12 @@
 -export([all_changed/0]).
 -export([is_changed/1]).
 -export([reload_modules/1]).
--record(state, {last, tref}).
+
+-record(state,
+        {
+          last :: erlang:timestamp(),
+          tref :: timer:tref()
+        }).
 
 %% External API
 
